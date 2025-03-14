@@ -43,59 +43,59 @@ export default function Home() {
   return (
     <main className=" w-full h-full">
       <Header />
-      <motion.div
+      {/* <motion.div
         ref={aboutRef}
         initial="hidden"
         animate={aboutInView ? "visible" : "hidden"}
         variants={fadeInUp}
       >
         <About />
-      </motion.div>
+      </motion.div> */}
 
-      <motion.div
+      {/* <motion.div
         ref={whyRef}
         initial="hidden"
         animate={whyInView ? "visible" : "hidden"}
         variants={fadeInUp}
       >
         <Why />
-      </motion.div>
+      </motion.div> */}
 
-      <motion.div
+      {/* <motion.div
         ref={featuresRef}
         initial="hidden"
         animate={featuresInView ? "visible" : "hidden"}
         variants={fadeInUp}
       >
         <Features />
-      </motion.div>
+      </motion.div> */}
 
-      <motion.div
+      {/* <motion.div
         ref={infoRef}
         initial="hidden"
         animate={infoInView ? "visible" : "hidden"}
         variants={fadeInUp}
       >
         <Info />
-      </motion.div>
+      </motion.div> */}
 
-      <motion.div
+      {/* <motion.div
         ref={referralRef}
         initial="hidden"
         animate={referralInView ? "visible" : "hidden"}
         variants={fadeInUp}
       >
         <Referral />
-      </motion.div>
+      </motion.div> */}
 
-      <motion.div
+      {/* <motion.div
         ref={dappRef}
         initial="hidden"
         animate={dappInView ? "visible" : "hidden"}
         variants={fadeInUp}
       >
         <Dapp />
-      </motion.div>
+      </motion.div> */}
     </main>
   );
 }

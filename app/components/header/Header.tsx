@@ -1,82 +1,158 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Slider from "../slider/Slider";
+import Link from "next/link";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Grid from "@mui/material/Grid2";
+
+import Box from "@mui/material/Box";
+import Plan from "./Plan";
+import {
+  freePlanData,
+  starterPlanData,
+  syncPlusPlanData,
+  syncProPlanData,
+  planPricing,
+} from "./plans";
 
 const Header = () => {
+  const [value, setValue] = useState("one");
+  const [billingCycle, setBillingCycle] = useState<
+    "monthly" | "quarterly" | "biannual" | "annual"
+  >("monthly");
+
+  const billingCycleMapping: Record<
+    string,
+    "monthly" | "quarterly" | "biannual" | "annual"
+  > = {
+    one: "monthly",
+    two: "quarterly",
+    three: "biannual",
+    four: "annual",
+  };
+
+  const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
+    console.log("Tab changed to:", newValue);
+    setValue(newValue);
+    setBillingCycle(billingCycleMapping[newValue]);
+  };
+
+  const getUpdatedPrice = (
+    plan: "starter" | "syncPlus" | "syncPro",
+    cycle: "monthly" | "quarterly" | "biannual" | "annual"
+  ): number => {
+    console.log("getUpdatedPrice called with", { plan, cycle });
+    const price = planPricing[plan]?.[cycle] ?? 0; // 🔥 Directly use cycle here
+    console.log("Calculated price:", price);
+    return price;
+  };
+
+  console.log("getUpdatedPrice", getUpdatedPrice);
+  console.log("values", value);
+  console.log("billingCycle", billingCycle);
+
   return (
-    <div className="flex_column_center w-full bg-[#F9FFF9] pt-4 text-center gap-4  md:px-0 px-2">
+    <div className="flex_column_center w-full bg-[#F9FFF9] pt-4 text-center gap-4 md:px-0 px-2">
       <p className="text-[30px] font-[600] md:text-[40px] md:font-[600] text-primary_black mt-8">
-        Digital Cooperative That Works For
+        From Pen and Paper to Smart Inventory Management
       </p>
 
-      <Slider />
-
-      <p className="text-medium text-[#2F2F2F] flex-wrap max-w-[450px] leading-5 ">
-        Maximize your earnings and unlock financial growth. Make the most of
-        your money and watch your wealth soar!
+      <p className="text-medium text-[#2F2F2F] flex-wrap max-w-[450px] leading-5 my-[3rem] md:my-0">
+        Sync360 helps growing businesses track and manage inventory easily—no
+        extra gadgets, just your phone. Stay in control anytime, anywhere!
       </p>
+
+      <p className="text-medium text-[#2F2F2F] flex-wrap max-w-[450px] font-[500] leading-5">
+        Try Sync360 7-day free trial.
+      </p>
+
       <div className="flex_center gap-6 my-8">
-        <button className="flex gap-1 min-w-[80px]  md:my-0 items-center bg-black py-2 rounded-md px-4 justify-center">
-          <Image width={25} height={25} src="/header/h-9.svg" alt="apple" />
-          <span className="flex flex-col items-start gap-0">
-            <p className="text-white text-[10px] md:text-[12px] ">
-              Download on the
-            </p>
-            <p className="text-white text-[15px]  md:text-[20px] ">App Store</p>
-          </span>
-        </button>
-        <button className="flex gap-1 min-w-[80px]  md:my-0 items-center bg-black py-2 rounded-md px-4 justify-center">
+        <Link href="https://play.google.com/store/apps/details?id=com.sync.sink">
+          <button className="flex gap-1 min-w-[80px] md:my-0 items-center bg-black py-2 rounded-md px-4 justify-center">
+            <Image width={25} height={25} src="/header/h-9.svg" alt="apple" />
+            <span className="flex flex-col items-start gap-0">
+              <p className="text-white text-[10px] md:text-[12px]">
+                Download on the
+              </p>
+              <p className="text-white text-[15px] md:text-[20px]">App Store</p>
+            </span>
+          </button>
+        </Link>
+
+        <button className="flex gap-1 min-w-[80px] md:my-0 items-center bg-black py-2 rounded-md px-4 justify-center">
           <Image width={25} height={25} src="/header/h-2.svg" alt="playstore" />
           <span className="flex flex-col items-start gap-0">
-            <p className="text-white text-[10px]  md:text-[12px] ">Get it on</p>
-            <p className="text-white text-[15px]  md:text-[20px] ">
-              Google Play
-            </p>
+            <p className="text-white text-[10px] md:text-[12px]">Get it on</p>
+            <p className="text-white text-[15px] md:text-[20px]">Google Play</p>
           </span>
         </button>
       </div>
 
-      <div className="w-full md:w-[70%] mx-auto z-10 relative">
-        <Image
-          width={70}
-          height={70}
-          className="object-cover left-[-1rem] top-[2rem]  md:w-[60px] md:h-[60px]  w-[60px] h-[60px] md:left-[6rem] md:top-[-3rem] absolute"
-          src="/header/h-8.svg"
-          alt="pic"
-        />
-        <Image
-          width={70}
-          height={70}
-          className="object-cover bottom-[-1rem] left-7  md:w-[60px] md:h-[60px]  w-[50px] h-[50px] md:left-[10rem] md:bottom-[3rem] absolute"
-          src="/header/h-7.svg"
-          alt="pic"
-        />
-
-        <Image
-          width={70}
-          height={70}
-          className="object-cover bottom-[-4rem] right-[0.2rem] md:right-[10rem]  md:w-[60px] md:h-[60px]  w-[60px] h-[60px]  md:bottom-[2rem] absolute"
-          src="/header/h-4.svg"
-          alt="pic"
-        />
-        <Image
-          width={70}
-          height={80}
-          className="object-cover right-[2rem] top-[-2rem]  md:w-[60px] md:h-[60px]  w-[60px] h-[60px]  md:right-[6rem] md:top-[-3rem] absolute"
-          src="/header/h-5.svg"
-          alt="pic"
-        />
-      </div>
-
-      <div className="w-full h-full flex_center md:mt-0">
-        <Image
-          width={800}
-          height={800}
-          className="object-cover md:mt-0 mt-9"
-          src="/header/h-6.svg"
-          alt="pic"
-        />
+      <div className="w-full md:w-[70%] mx-auto flex flex-col items-center gap-4">
+        <p className="font-[500] text-[#1e1e1e] text-[40px]">Choose the</p>
+        <p className="font-[500] text-[#52B661] text-[40px]">
+          Right Plan for Your Business
+        </p>
+        <Box
+          sx={{
+            width: "100%",
+            mx: "auto",
+            display: "flex",
+            justifyContent: "center",
+            my: 4,
+          }}
+        >
+          <Tabs
+            value={value}
+            onChange={handleTabChange}
+            aria-label="billing cycle tabs"
+            sx={{
+              "& .MuiTabs-indicator": { backgroundColor: "#52B661" },
+              "& .MuiTab-root": { margin: "0 8px" },
+            }}
+          >
+            <Tab value="one" label="Monthly" />
+            <Tab value="two" label="Quarterly" />
+            <Tab value="three" label="Biannual" />
+            <Tab value="four" label="Annual" />
+          </Tabs>
+        </Box>
+        <Box mt={4}>
+          <Grid container spacing={4} justifyContent="center">
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Plan {...freePlanData} />
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Plan
+                {...starterPlanData}
+                price={{
+                  ...starterPlanData.price,
+                  amount: getUpdatedPrice("starter", billingCycle).toString(),
+                }}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Plan
+                {...syncPlusPlanData}
+                price={{
+                  ...syncPlusPlanData.price,
+                  amount: getUpdatedPrice("syncPlus", billingCycle).toString(),
+                }}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Plan
+                {...syncProPlanData}
+                price={{
+                  ...syncProPlanData.price,
+                  amount: getUpdatedPrice("syncPro", billingCycle).toString(),
+                }}
+              />
+            </Grid>
+          </Grid>
+        </Box>
+        ;
       </div>
     </div>
   );

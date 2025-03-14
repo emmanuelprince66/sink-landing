@@ -23,8 +23,8 @@ const Navbar = () => {
 
   const links = [
     { id: 1, noti: "home", to: "/", des: "Home", path: "/" },
-    { id: 2, noti: "feature", to: "feature", des: "Feature" },
-    { id: 3, noti: "about", to: "about", des: "About Us", path: "/about" },
+    // { id: 2, noti: "feature", to: "feature", des: "Feature" },
+    // { id: 3, noti: "about", to: "about", des: "About Us", path: "/about" },
     {
       id: 4,
       noti: "contact",
@@ -32,7 +32,7 @@ const Navbar = () => {
       des: "Contact Us",
       path: "/contact",
     },
-    { id: 5, noti: "blog", to: "/blog", des: "Blog" },
+    // { id: 5, noti: "blog", to: "/blog", des: "Blog" },
     // { id: 6, noti: "privacy", to: "/privacy", des: "Privacy" },
   ];
 
@@ -64,7 +64,7 @@ const Navbar = () => {
           <Image
             width={150}
             height={150}
-            src="/navbar/wages-icon.svg"
+            src="/navbar/sink2.png"
             alt="main icon"
           />
         </Link>

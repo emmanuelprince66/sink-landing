@@ -10,28 +10,27 @@ const Footer = () => {
   const { state } = useStateContext();
 
   const links = [
-    { id: 1, to: "feature", des: "Feature" },
-    { id: 2, to: "about", des: "About Us" },
+    // { id: 1, to: "feature", des: "Feature" },
+    // { id: 2, to: "about", des: "About Us" },
     { id: 3, to: "contact", des: "Contact Us" },
-    { id: 4, to: "blog", des: "Blog" },
+    // { id: 4, to: "blog", des: "Blog" },
   ];
 
   return (
     <>
       {!state && (
-        <div className="w-full px-5  md:px-0 py-5 bg-[#001E06] mt-[10%]  h-full">
+        <div className="w-full px-5  md:px-0 py-5 bg-[#001E06]   h-full">
           <div className="flex flex-col h-full md:h-[15rem] w-full md:max-w-[1200px]   items-center md:flex-row gap-[3rem]  justify-between mx-auto">
             <div className="flex_column gap-5 ">
               <Image
                 width={140}
                 height={140}
-                src="/footer/f-1.svg"
+                src="/navbar/sink1.png"
                 alt="main icon"
               />
 
               <p className="text-[#E6F5E8] text-[14px] font-[400] flex-wrap  w-full md:max-w-[70%] ">
-                Maximize your earnings and unlock financial growth. Make the
-                most of your money and watch your wealth soar!
+                Sync your business for total growth.
               </p>
 
               <div className="flex flex-col  items-start md:items-center md:flex-row gap-[3rem] md:gap-[2rem]  justify-center ">
@@ -113,7 +112,7 @@ const Footer = () => {
               sx={{ color: "white", background: "white", width: "100%" }}
             />
             <p className="text-[#E6F5E8]  text-[14px] font-[400] ">
-              © 2024 WagesFinance. All rights reserved.
+              © {new Date().getFullYear()} Sync360. All rights reserved.
             </p>
           </div>
         </div>

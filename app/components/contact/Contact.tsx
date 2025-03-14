@@ -133,11 +133,11 @@ const Contact = () => {
                     WhatApp
                   </p>
 
-                  <Link href="https://chat.whatsapp.com/EU8kVd0CtToJm9cMrm642n">
+                  {/* <Link href="https://chat.whatsapp.com/EU8kVd0CtToJm9cMrm642n">
                     <p className="text-primary_green underline cursor-pointer font-[500] text-[15px]">
                       Click here to start chat.
                     </p>
-                  </Link>
+                  </Link> */}
 
                   <p className="text-primary_gray font-normal text-[12px]">
                     Sunday - Saturday
@@ -166,7 +166,7 @@ const Contact = () => {
                   </p>
 
                   <p className="text-primary_black  font-[500] text-[15px]">
-                    +234 706 813 5861
+                    0814 973 4622
                   </p>
                   <p className="text-primary_gray font-normal text-[12px]">
                     Sunday - Saturday
@@ -195,7 +195,7 @@ const Contact = () => {
                   </p>
 
                   <p className="text-primary_black  font-[500] text-[15px]">
-                    Info@wagesfinance.ng
+                    Info@sync360.africa
                   </p>
                   <p className="text-primary_gray font-normal text-[12px]">
                     Sunday - Saturday
@@ -210,7 +210,7 @@ const Contact = () => {
         </Grid>
 
         {/* Render Accordions only after component mounts to avoid hydration issues */}
-        {mounted && (
+        {/* {mounted && (
           <div className="w-full md:w-[65%] mx-auto flex flex-col items-center mt-[20%] md:mt-[10%] text-center">
             <p className="font-[600] text-[25px] md:text-[30px] text-primary_black mb-5">
               Frequently Asked Questions
@@ -264,11 +264,11 @@ const Contact = () => {
               </Accordion>
             ))}
           </div>
-        )}
+        )} */}
       </motion.div>
 
       {/* Animating the Dapp component separately */}
-      <motion.div
+      {/* <motion.div
         ref={DappRef}
         initial="hidden"
         animate={dappView ? "visible" : "hidden"}
@@ -276,7 +276,7 @@ const Contact = () => {
         className="mt-10 w-full"
       >
         <Dapp />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
