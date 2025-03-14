@@ -63,6 +63,10 @@ const Plan: React.FC<PlanProps> = ({
         {/* Button Stays at Bottom */}
         <div className="mt-auto">
           <Button
+            sx={{
+              bgcolor: "white",
+              _hover: { bgcolor: "gray" },
+            }}
             variant="contained"
             fullWidth
             className="mb-0 bg-white text-black hover:bg-gray-100 normal-case"
