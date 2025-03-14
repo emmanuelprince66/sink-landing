@@ -23,6 +23,7 @@ const Plan: React.FC<PlanProps> = ({
 }) => {
   return (
     <Card
+      sx={{ backgroundColor }}
       className={`${backgroundColor} rounded-lg shadow-md min-h-[44rem] flex flex-col`}
     >
       <CardContent className="p-6 flex flex-col flex-grow">
@@ -66,6 +67,7 @@ const Plan: React.FC<PlanProps> = ({
             sx={{
               bgcolor: "white",
               _hover: { bgcolor: "gray" },
+              color: "black",
             }}
             variant="contained"
             fullWidth

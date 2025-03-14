@@ -41,7 +41,7 @@ export const freePlanData = {
     { name: "Bulk SMS/Emails", available: true },
     { name: "Wallet", available: true, comingSoon: true },
   ],
-  backgroundColor: "bg-amber-50",
+  backgroundColor: "#EEF4EF",
   buttonText: "Choose Plan",
 };
 
@@ -64,7 +64,7 @@ export const starterPlanData = {
     { name: "Bulk SMS/Emails", available: true },
     { name: "Wallet", available: true, comingSoon: true },
   ],
-  backgroundColor: "bg-amber-50",
+  backgroundColor: "#F6EDD9",
   buttonText: "Choose Plan",
 };
 
@@ -90,7 +90,7 @@ export const syncPlusPlanData = {
     { name: "Wallet", available: true, comingSoon: true },
     { name: "Unlimited Invoice", available: true, comingSoon: true },
   ],
-  backgroundColor: "bg-[#B4CBB4]",
+  backgroundColor: "#B4CBB4",
   buttonText: "Choose Plan",
 };
 
@@ -120,6 +120,6 @@ export const syncProPlanData = {
     { name: "Wallet", available: true, comingSoon: true },
     { name: "Unlimited Invoice", available: true, comingSoon: true },
   ],
-  backgroundColor: "bg-[#9595B8]",
+  backgroundColor: "#9595B8",
   buttonText: "Choose Plan",
 };
