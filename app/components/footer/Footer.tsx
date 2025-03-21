@@ -74,22 +74,29 @@ const Footer = () => {
                       </p>
                     </span>
                   </button>
-                  <button className="flex gap-1 md:ml-auto   md:my-0 items-center bg-white py-2 rounded-md px-4 justify-center">
-                    <Image
-                      width={25}
-                      height={25}
-                      src="/dapp/d-3.svg"
-                      alt="playstore"
-                    />
-                    <span className="flex flex-col items-start gap-0">
-                      <p className="text-black text-[10px]  md:text-[12px] ">
-                        Get it on
-                      </p>
-                      <p className="text-black text-[15px]  md:text-[20px] ">
-                        Google Play
-                      </p>
-                    </span>
-                  </button>
+
+                  <Link
+                    href={
+                      "https://play.google.com/store/apps/details?id=com.sync.sink"
+                    }
+                  >
+                    <button className="flex gap-1 md:ml-auto   md:my-0 items-center bg-white py-2 rounded-md px-4 justify-center">
+                      <Image
+                        width={25}
+                        height={25}
+                        src="/dapp/d-3.svg"
+                        alt="playstore"
+                      />
+                      <span className="flex flex-col items-start gap-0">
+                        <p className="text-black text-[10px]  md:text-[12px] ">
+                          Get it on
+                        </p>
+                        <p className="text-black text-[15px]  md:text-[20px] ">
+                          Google Play
+                        </p>
+                      </span>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

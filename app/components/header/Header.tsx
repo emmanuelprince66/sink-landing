@@ -68,7 +68,7 @@ const Header = () => {
       </p>
 
       <div className="flex_center gap-6 my-8">
-        <Link href="https://play.google.com/store/apps/details?id=com.sync.sink">
+        <Link href="">
           <button className="flex gap-1 min-w-[80px] md:my-0 items-center bg-black py-2 rounded-md px-4 justify-center">
             <Image width={25} height={25} src="/header/h-9.svg" alt="apple" />
             <span className="flex flex-col items-start gap-0">
@@ -80,13 +80,24 @@ const Header = () => {
           </button>
         </Link>
 
-        <button className="flex gap-1 min-w-[80px] md:my-0 items-center bg-black py-2 rounded-md px-4 justify-center">
-          <Image width={25} height={25} src="/header/h-2.svg" alt="playstore" />
-          <span className="flex flex-col items-start gap-0">
-            <p className="text-white text-[10px] md:text-[12px]">Get it on</p>
-            <p className="text-white text-[15px] md:text-[20px]">Google Play</p>
-          </span>
-        </button>
+        <Link
+          href={"https://play.google.com/store/apps/details?id=com.sync.sink"}
+        >
+          <button className="flex gap-1 min-w-[80px] md:my-0 items-center bg-black py-2 rounded-md px-4 justify-center">
+            <Image
+              width={25}
+              height={25}
+              src="/header/h-2.svg"
+              alt="playstore"
+            />
+            <span className="flex flex-col items-start gap-0">
+              <p className="text-white text-[10px] md:text-[12px]">Get it on</p>
+              <p className="text-white text-[15px] md:text-[20px]">
+                Google Play
+              </p>
+            </span>
+          </button>
+        </Link>
       </div>
 
       <div className="w-full md:w-[70%] mx-auto flex flex-col items-center gap-4">

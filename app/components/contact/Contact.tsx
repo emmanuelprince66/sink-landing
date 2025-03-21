@@ -166,7 +166,7 @@ const Contact = () => {
                   </p>
 
                   <p className="text-primary_black  font-[500] text-[15px]">
-                    0814 973 4622
+                    0814 973 4622 , +2348142699290
                   </p>
                   <p className="text-primary_gray font-normal text-[12px]">
                     Sunday - Saturday

@@ -102,7 +102,13 @@ const Navbar = () => {
 
         {isTabletOrDesktop && (
           <CustomButton>
-            <Link href={""}>Get The App</Link>
+            <Link
+              href={
+                "https://play.google.com/store/apps/details?id=com.sync.sink"
+              }
+            >
+              Get The App
+            </Link>
           </CustomButton>
         )}
 
